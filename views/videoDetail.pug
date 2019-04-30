@@ -1,0 +1,23 @@
+extends layouts/main
+include mixins/videoBlock
+
+block content
+  .video-detail__container
+    .video__player
+      +videoBlock({
+        fileUrl: '/' + video.fileUrl,
+      })
+    .video__info
+      a(href=`/video/${video.id}/edit`)
+        button Edit Video
+      h5.video__title= video.title
+      if video.views === 1
+        span.video__views 1 view
+      else
+        span.video__views #{video.views} views
+      p.video__description= video.description
+    .video__comments
+      if video.comments.length === 1
+        span.video__comment-number 1 comment
+      else 
+        span.video__comment-number #{video.comments.length} comments

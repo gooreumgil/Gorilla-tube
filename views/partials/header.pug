@@ -1,0 +1,23 @@
+header.header
+  .header__wrapper
+    .header__column
+      a(href='/')
+        i.fab.fa-youtube
+    .header__column
+      form(action='/search', method="get")
+        input(type="text", placeholder="Search by term...", name="term")
+    .header__column
+      ul
+        if !user
+          li
+            a(href='/join') Join
+          li
+            a(href='/login') Log In
+        else
+          
+          li
+            a(href=`/video/upload`) Upload
+          li
+            a(href='/profile') Profile
+          li
+            a(href='/logout') Log out
