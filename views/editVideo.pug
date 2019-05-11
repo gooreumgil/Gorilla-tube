@@ -3,8 +3,8 @@ extends layouts/main
 block content
   .form-container
     form(action=`/video/${video.id}/edit`, method="post")
-      input(type="text", placeholder=video.title, name="title")
-      textarea(name="description", placeholder=video.description)
+      input(type="text", name="title", placeholder="Title" value=video.title)
+      textarea(name="description", placeholder=video.description, value=video.description)
       input(type="submit", value="Update Video")
     a.form-container__link.form-container__link--delete(href=`/video/${video.id}/deleteVideo`)
       button.button.delete Delete Video

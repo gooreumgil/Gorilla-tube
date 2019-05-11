@@ -1,11 +1,14 @@
 import express from "express";
+import passport from "passport";
 import { home, search } from "../video/videoController";
 import {
   getJoin,
   postJoin,
   getLogin,
   postLogin,
-  logout
+  logout,
+  githubLogin,
+  postGithubLogin
 } from "../user/userController";
 import { onlyPublic } from "../../middleware";
 
@@ -21,6 +24,14 @@ globalRouter.post("/join", onlyPublic, postJoin, postLogin);
 // login
 globalRouter.get("/login", onlyPublic, getLogin);
 globalRouter.post("/login", onlyPublic, postLogin);
+
+// github
+globalRouter.get("/auth/github", githubLogin);
+globalRouter.get(
+  "/auth/github/callback",
+  passport.authenticate("github", { failureRedirect: "login" }),
+  postGithubLogin
+);
 
 globalRouter.get("/logout", logout);
 

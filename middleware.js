@@ -8,8 +8,8 @@ export const uploadAvatar = multerAvatar.single("avatar");
 
 export const localMiddleware = (req, res, next) => {
   res.locals.siteName = "Gorilla-tube";
-  res.locals.user = req.user;
-  console.log(req.user);
+  res.locals.loggedUser = req.user;
+  // console.log("@@@@@@@@@@@@@@", req.user);
   next();
 };
 

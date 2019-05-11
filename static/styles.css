@@ -138,15 +138,14 @@ input {
 
 .u-avatar {
   height: 80px;
-  background-color: #ea232c;
-  border-radius: 50%; }
+  border-radius: 50%;
+  border: 1px solid #eaeaea; }
 
 html,
 body {
   height: 100%; }
 
 body {
-  background-color: #f5f5f5;
   color: #444444;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 14px; }
@@ -459,24 +458,85 @@ input[type="submit"] {
     .video-detail__container .video__author a {
       color: #3498db; }
   .video-detail__container .video__comments {
-    margin-top: 25px; }
+    margin-top: 25px;
+    text-align: left;
+    max-width: 850px;
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #eaeaea; }
     .video-detail__container .video__comments .video__comment-number {
       font-size: 18px; }
     .video-detail__container .video__comments .add__comment {
       margin-top: 25px;
       width: 100%; }
       .video-detail__container .video__comments .add__comment input {
-        width: 100%; }
+        width: 100%;
+        max-width: none;
+        background-color: #f5f5f5; }
     .video-detail__container .video__comments .video__comments-list {
       margin-top: 50px; }
       .video-detail__container .video__comments .video__comments-list li {
-        background-color: #3498db;
+        position: relative;
         color: white;
         padding: 15px;
-        border-radius: 20px;
-        border-bottom-left-radius: 0px; }
+        border-bottom-left-radius: 0px;
+        padding-left: 0;
+        padding-right: 0;
+        overflow: hidden; }
         .video-detail__container .video__comments .video__comments-list li:not(:last-child) {
           margin-bottom: 15px; }
+        .video-detail__container .video__comments .video__comments-list li form {
+          position: absolute;
+          right: 0px;
+          top: 15px; }
+          .video-detail__container .video__comments .video__comments-list li form button {
+            width: auto;
+            background-color: #fff;
+            width: 10px;
+            height: 1px;
+            outline: none; }
+            .video-detail__container .video__comments .video__comments-list li form button i#comment-delete {
+              color: #a0a0a0;
+              cursor: pointer; }
+            .video-detail__container .video__comments .video__comments-list li form button input {
+              width: auto;
+              background-color: #fff;
+              display: none; }
+        .video-detail__container .video__comments .video__comments-list li .avatar {
+          float: left;
+          box-sizing: border-box;
+          background-size: cover;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 1px solid #eaeaea; }
+        .video-detail__container .video__comments .video__comments-list li .user-info {
+          float: left;
+          box-sizing: border-box;
+          width: calc(100% - 40px);
+          padding-left: 8px; }
+          .video-detail__container .video__comments .video__comments-list li .user-info span.user-name {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333; }
+            .video-detail__container .video__comments .video__comments-list li .user-info span.user-name span.comment-time {
+              font-size: 13px;
+              font-weight: 400;
+              margin-left: 8px; }
+          .video-detail__container .video__comments .video__comments-list li .user-info span.text {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 13px;
+            font-weight: 400;
+            color: #333; }
+          .video-detail__container .video__comments .video__comments-list li .user-info .like-box {
+            margin-top: 12px; }
+            .video-detail__container .video__comments .video__comments-list li .user-info .like-box i {
+              font-size: 12px;
+              color: #a0a0a0; }
+            .video-detail__container .video__comments .video__comments-list li .user-info .like-box :first-child {
+              margin-right: 10px; }
 
 .user-profile {
   width: 100%;
@@ -488,6 +548,12 @@ input[type="submit"] {
     flex-direction: column;
     align-items: center;
     margin-bottom: 18px; }
+    .user-profile .user-profile__header .avatar {
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      border-radius: 50%;
+      border: 1px solid #eee; }
     .user-profile .user-profile__header .profile__username {
       font-size: 18px;
       margin-top: 15px; }

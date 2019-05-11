@@ -43,6 +43,11 @@
   }
   .video__comments {
     margin-top: 25px;
+    text-align: left;
+    max-width: 850px;
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #eaeaea;
     .video__comment-number {
       font-size: 18px;
     }
@@ -51,18 +56,89 @@
       width: 100%;
       input {
         width: 100%;
+        max-width: none;
+        background-color: #f5f5f5;
       }
     }
     .video__comments-list {
       margin-top: 50px;
       li {
-        background-color: #3498db;
+        // background-color: #3498db;
+        position: relative;
         color: white;
         padding: 15px;
-        border-radius: 20px;
+        // border-radius: 20px;
         border-bottom-left-radius: 0px;
+        padding-left: 0;
+        padding-right: 0;
+        overflow: hidden;
         &:not(:last-child) {
           margin-bottom: 15px;
+        }
+        form {
+          position: absolute;
+          right: 0px;
+          top: 15px;
+          button {
+            width: auto;
+            background-color: #fff;
+            width: 10px;
+            height: 1px;
+            outline: none;
+            i#comment-delete {
+              color: #a0a0a0;
+              cursor: pointer;
+            }
+            input {
+              width: auto;
+              background-color: #fff;
+              display: none;
+            }
+          }
+        }
+
+        .avatar {
+          float: left;
+          box-sizing: border-box;
+          background-size: cover;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 1px solid #eaeaea;
+        }
+        .user-info {
+          float: left;
+          box-sizing: border-box;
+          width: calc(100% - 40px);
+          padding-left: 8px;
+          span.user-name {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            span.comment-time {
+              font-size: 13px;
+              font-weight: 400;
+              margin-left: 8px;
+            }
+          }
+          span.text {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 13px;
+            font-weight: 400;
+            color: #333;
+          }
+          .like-box {
+            margin-top: 12px;
+            i {
+              font-size: 12px;
+              color: #a0a0a0;
+            }
+            :first-child {
+              margin-right: 10px;
+            }
+          }
         }
       }
     }
